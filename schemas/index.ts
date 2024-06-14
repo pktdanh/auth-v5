@@ -5,6 +5,7 @@ export const LoginSchema = z.object({
   password: z.string().min(6, {
     message: 'The minimum password length is 6',
   }),
+  code: z.optional(z.string()),
 });
 
 export const RegisterSchema = z.object({
