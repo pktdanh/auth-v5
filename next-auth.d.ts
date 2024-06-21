@@ -5,6 +5,7 @@ import { JWT } from 'next-auth/jwt';
 export type ExtendedUser = DefaultSession['user'] & {
   role: UserRole;
   isTwoFactorEnabled: boolean;
+  isOAuth: boolean;
 };
 
 declare module 'next-auth' {
@@ -22,5 +23,6 @@ declare module 'next-auth/jwt' {
     /** OpenID ID Token */
     role?: UserRole;
     isTwoFactorEnabled: boolean;
+    isOAuth: boolean;
   }
 }
